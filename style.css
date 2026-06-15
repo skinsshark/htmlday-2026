@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  src: url('./SIMSUN.ttf');
+  font-family: 'SIMSUN';
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SIMSUN';
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+}
+
+nav p b::before {
+  content: '(';
+}
+
+nav p b::after {
+  content: ')';
+}
+
+main,
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  gap: 36px;
+  padding: 6svh 20px;
+  min-height: 98svh;
+}
+
+summary {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid #000;
+}
+
+th:not(:first-child),
+td:not(:first-child) {
+  border-left: 1px solid #000;
+}
+
+footer {
+  gap: 36px;
+}
+
+pre {
+  display: inline-block;
+  text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  main {
+    overflow-x: hidden;
+  }
+
+  pre {
+    width: 100%;
+    transform: scale(0.6);
+  }
+}
