@@ -16,24 +16,37 @@ body {
 }
 
 h1,
-p {
+dd,
+summary {
   margin: 0;
   text-wrap: balance;
 }
 
-nav {
+section {
   display: flex;
   flex-direction: column;
   gap: 12px;
   max-width: 600px;
 }
 
-nav p b::before {
+section dd {
+  margin: 0;
+}
+
+section dt {
+  font-weight: 900;
+}
+
+section dt::before {
   content: '(';
 }
 
-nav p b::after {
+section dt::after {
   content: ')';
+}
+
+section dt:not(:first-child) {
+  margin-top: 20px;
 }
 
 main,
@@ -45,13 +58,17 @@ footer {
 }
 
 main {
-  gap: 36px;
-  padding: 6svh 48px;
+  gap: 12px;
+  padding: 4svh 48px 0;
   min-height: 98svh;
 }
 
 summary {
   cursor: pointer;
+}
+
+details {
+  min-height: 180px;
 }
 
 table {
@@ -67,10 +84,6 @@ td:not(:first-child) {
   border-left: 1px solid #000;
 }
 
-footer {
-  gap: 36px;
-}
-
 pre {
   display: inline-block;
   text-align: left;
@@ -78,11 +91,17 @@ pre {
 
 @media only screen and (max-width: 767px) {
   main {
+    min-height: auto;
+    padding: 64px 40px;
     overflow-x: hidden;
   }
 
   pre {
     width: 100%;
-    transform: scale(0.6);
+    font-size: 0.5rem;
+  }
+
+  details {
+    min-height: 0;
   }
 }
